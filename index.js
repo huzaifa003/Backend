@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require("mongoose");
 const app = express()
 
 app.set("view engine",'ejs')
@@ -11,3 +12,9 @@ app.get("/",(req,res)=>{
     console.log("Index")
     res.render('index',{text : "Hello"})
 })
+
+
+const connect = mongoose.connect('mongodb+srv://root:root@flowteam.n4ybnu2.mongodb.net/?retryWrites=true&w=majority')
+
+
+app.use(express.json());
