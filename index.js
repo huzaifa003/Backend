@@ -22,14 +22,14 @@ app.get("/",(req,res)=>{
     res.render('index',{text : "Huzaifa"})
 })
 
-
+const teamRouter = require('./routers/team')
+app.user("/team",teamRouter)
 
 
 mongoose.connection.once('open', ()=>{
     console.log("Connected to MongoDB");
     app.listen(3000)
 })
-
 
 
 
