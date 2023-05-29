@@ -1,21 +1,36 @@
+const dbConn  = require('./config/dbConn');
+const mongoose = require('mongoose')
+
+dbConn();
+
+
 const express = require('express')
 
 const app = express()
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.set("view engine",'ejs')
-app.listen(3000)
+
 
 const userRouter = require('./routers/user')
 app.use("/users",userRouter)
 
 app.get("/",(req,res)=>{
     console.log("Index")
-    res.render('index',{text : "Hello"})
+    res.render('index',{text : "Huzaifa"})
+})
+
+
+
+
+mongoose.connection.once('open', ()=>{
+    console.log("Connected to MongoDB");
+    app.listen(3000)
 })
 
 
 
 
 
-
-app.use(express.json());
