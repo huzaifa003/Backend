@@ -9,6 +9,9 @@ router.get("/",(req,res)=>{
     res.sendStatus(200).send({name:"random"})
 })
 
-router.post("/add_user")
+router.post("/add_user",(req,res)=>{
+    const team = req.body.team;
+    
+})
 
 module.exports = router;1

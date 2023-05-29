@@ -2,9 +2,9 @@ const mongoose  = require('mongoose')
 const userSchema = new mongoose.Schema({
     id : Number,
     name: Number,
-
+    email: String,
     team: Number,
-
+    
     rank : String,
 
     personal_cc: Number,
