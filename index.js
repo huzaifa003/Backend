@@ -23,7 +23,7 @@ app.get("/",(req,res)=>{
 })
 
 const teamRouter = require('./routers/team')
-app.user("/team",teamRouter)
+app.use("/team",teamRouter)
 
 
 mongoose.connection.once('open', ()=>{

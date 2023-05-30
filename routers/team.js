@@ -13,3 +13,5 @@ router.post("/newTeam",async(req,res)=>{
     id = id+1;
     res.status(200).json(result);
 })
+
+module.exports = router;
